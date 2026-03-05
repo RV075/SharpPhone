@@ -43,6 +43,7 @@
             btnAddPhone.TabIndex = 0;
             btnAddPhone.Text = "+";
             btnAddPhone.UseVisualStyleBackColor = true;
+            btnAddPhone.Click += btnAddPhone_Click;
             // 
             // btnModify
             // 
@@ -52,6 +53,7 @@
             btnModify.TabIndex = 1;
             btnModify.Text = "Aanpassen";
             btnModify.UseVisualStyleBackColor = true;
+            btnModify.Click += btnModify_Click;
             // 
             // btnDelete
             // 
@@ -61,6 +63,7 @@
             btnDelete.TabIndex = 2;
             btnDelete.Text = "Verwijderen";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // listPhones
             // 
