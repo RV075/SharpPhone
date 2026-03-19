@@ -24,7 +24,20 @@ namespace SharpPhone
 
         private void btnAddPhone_Click(object sender, EventArgs e)
         {
-            //SmartPhone newPhone = new SmartPhone(1, "Apple", "iPhone 14 Pro", 256000
+            SmartPhone newPhone = new SmartPhone(1, "Apple", "iPhone 14 Pro", 256000, 999.99m);
+            //MessageBox.Show(newPhone.Brand);
+
+            List<SmartPhone> phones = new List<SmartPhone>();
+            phones.Add(newPhone);
+
+            phones.Add(
+                new SmartPhone(2, "Apple", "iPhone 15 Pro Max", 512000, 1
+                );
+
+            foreach (SmartPhone phone in phones) // foreach (var item in phones)
+            {
+                MessageBox.Show(phone.Brand); // MessageBox.Show(item.Brand);
+            }
 
             // Show Form addEdit
 
