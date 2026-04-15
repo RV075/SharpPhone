@@ -1,48 +1,80 @@
+using System;
+using System.Linq;
+using System.Windows.Forms;
+
 namespace SharpPhone
 {
-    public partial class frmMain : Form
+    public partial class Form1 : Form
     {
-        public frmMain()
+        private SharpPhoneFileStorage storage = new SharpPhoneFileStorage();
+        private SharpPhoneDataStore data;
+
+        public Form1()
         {
             InitializeComponent();
+            data = storage.Load();
+            RefreshList();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void RefreshList()
         {
+            listBoxPhones.Items.Clear();
 
+            foreach (var phone in data.Phones)
+            {
+                listBoxPhones.Items.Add(phone);
+            }
         }
 
-        private void btnModify_Click(object sender, EventArgs e)
+        private int GetNextId()
         {
+            if (data.Phones.Count == 0)
+                return 0;
 
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("delete button clicked");
+            return data.Phones.Max(p => p.Id) + 1;
         }
 
         private void btnAddPhone_Click(object sender, EventArgs e)
         {
-            SmartPhone newPhone = new SmartPhone(1, "Apple", "iPhone 14 Pro", 256000, 999.99m);
-            //MessageBox.Show(newPhone.Brand);
+            using var form = new frmAddPhone();
 
-            List<SmartPhone> phones = new List<SmartPhone>();
-            phones.Add(newPhone);
+            if (form.ShowDialog() != DialogResult.OK)
+                return;
 
-            phones.Add(
-                new SmartPhone(2, "Apple", "iPhone 15 Pro Max", 512000, 1
-                );
+            var phone = form.Phone;
+            phone.Id = GetNextId();
 
-            foreach (SmartPhone phone in phones) // foreach (var item in phones)
-            {
-                MessageBox.Show(phone.Brand); // MessageBox.Show(item.Brand);
-            }
+            data.Phones.Add(phone);
 
-            // Show Form addEdit
+            RefreshList();
+            storage.Save(data);
+        }
 
-            Form frmAddEdit = new frmAddEdit();
-            frmAddEdit.ShowDialog();
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (listBoxPhones.SelectedIndex == -1)
+                return;
+
+            data.Phones.RemoveAt(listBoxPhones.SelectedIndex);
+
+            RefreshList();
+            storage.Save(data);
+        }
+
+        private void btnModify_Click(object sender, EventArgs e)
+        {
+            if (listBoxPhones.SelectedIndex == -1)
+                return;
+
+            var phone = data.Phones[listBoxPhones.SelectedIndex];
+
+            using var form = new frmAddPhone(phone);
+
+            if (form.ShowDialog() != DialogResult.OK)
+                return;
+
+            RefreshList();
+            storage.Save(data);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SharpPhone
 {
-    partial class frmMain
+    partial class Form1
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             btnAddPhone = new Button();
-            btnModify = new Button();
-            btnDelete = new Button();
-            listPhones = new ListBox();
-            label1 = new Label();
+            btnAanpassen = new Button();
+            btnVerwijderen = new Button();
+            listBoxPhones = new ListBox();
+            lblVoorraad = new Label();
             SuspendLayout();
             // 
             // btnAddPhone
@@ -45,54 +45,54 @@
             btnAddPhone.UseVisualStyleBackColor = true;
             btnAddPhone.Click += btnAddPhone_Click;
             // 
-            // btnModify
+            // btnAanpassen
             // 
-            btnModify.Location = new Point(420, 65);
-            btnModify.Name = "btnModify";
-            btnModify.Size = new Size(100, 29);
-            btnModify.TabIndex = 1;
-            btnModify.Text = "Aanpassen";
-            btnModify.UseVisualStyleBackColor = true;
-            btnModify.Click += btnModify_Click;
+            btnAanpassen.Location = new Point(420, 65);
+            btnAanpassen.Name = "btnAanpassen";
+            btnAanpassen.Size = new Size(100, 29);
+            btnAanpassen.TabIndex = 1;
+            btnAanpassen.Text = "Aanpassen";
+            btnAanpassen.UseVisualStyleBackColor = true;
+            btnAanpassen.Click += btnModify_Click;
             // 
-            // btnDelete
+            // btnVerwijderen
             // 
-            btnDelete.Location = new Point(420, 100);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(100, 29);
-            btnDelete.TabIndex = 2;
-            btnDelete.Text = "Verwijderen";
-            btnDelete.UseVisualStyleBackColor = true;
-            btnDelete.Click += btnDelete_Click;
+            btnVerwijderen.Location = new Point(420, 100);
+            btnVerwijderen.Name = "btnVerwijderen";
+            btnVerwijderen.Size = new Size(100, 29);
+            btnVerwijderen.TabIndex = 2;
+            btnVerwijderen.Text = "Verwijderen";
+            btnVerwijderen.UseVisualStyleBackColor = true;
+            btnVerwijderen.Click += btnDelete_Click;
             // 
-            // listPhones
+            // listBoxPhones
             // 
-            listPhones.FormattingEnabled = true;
-            listPhones.Location = new Point(12, 30);
-            listPhones.Name = "listPhones";
-            listPhones.Size = new Size(402, 404);
-            listPhones.TabIndex = 3;
+            listBoxPhones.FormattingEnabled = true;
+            listBoxPhones.Location = new Point(12, 30);
+            listBoxPhones.Name = "listBoxPhones";
+            listBoxPhones.Size = new Size(402, 404);
+            listBoxPhones.TabIndex = 3;
             // 
-            // label1
+            // lblVoorraad
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
+            lblVoorraad.AutoSize = true;
+            lblVoorraad.Location = new Point(12, 9);
+            lblVoorraad.Name = "lblVoorraad";
+            lblVoorraad.Size = new Size(70, 20);
+            lblVoorraad.TabIndex = 0;
+            lblVoorraad.Text = "Voorraad";
             // 
-            // frmMain
+            // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(532, 453);
-            Controls.Add(label1);
-            Controls.Add(listPhones);
-            Controls.Add(btnDelete);
-            Controls.Add(btnModify);
+            Controls.Add(lblVoorraad);
+            Controls.Add(listBoxPhones);
+            Controls.Add(btnVerwijderen);
+            Controls.Add(btnAanpassen);
             Controls.Add(btnAddPhone);
-            Name = "frmMain";
+            Name = "Form1";
             Text = "SoundSharp";
             ResumeLayout(false);
             PerformLayout();
@@ -101,9 +101,9 @@
         #endregion
 
         private Button btnAddPhone;
-        private Button btnModify;
-        private Button btnDelete;
-        private ListBox listPhones;
-        private Label label1;
+        private Button btnAanpassen;
+        private Button btnVerwijderen;
+        private ListBox listBoxPhones;
+        private Label lblVoorraad;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SharpPhone
 {
-    partial class SmartPhone
+    partial class frmAddPhone
     {
         /// <summary>
         /// Required designer variable.
@@ -35,11 +35,11 @@
             lblVoorraad = new Label();
             btnOk = new Button();
             btnCancel = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            txtStock = new TextBox();
+            txtSize = new TextBox();
+            txtPrice = new TextBox();
+            txtModel = new TextBox();
+            txtBrand = new TextBox();
             SuspendLayout();
             // 
             // lblMerk
@@ -50,7 +50,6 @@
             lblMerk.Size = new Size(42, 20);
             lblMerk.TabIndex = 0;
             lblMerk.Text = "Merk";
-            lblMerk.Click += label1_Click;
             // 
             // lblModel
             // 
@@ -106,52 +105,52 @@
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtStock
             // 
-            textBox1.Location = new Point(126, 267);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "0";
-            textBox1.Size = new Size(269, 27);
-            textBox1.TabIndex = 7;
+            txtStock.Location = new Point(126, 267);
+            txtStock.Name = "txtStock";
+            txtStock.PlaceholderText = "0";
+            txtStock.Size = new Size(269, 27);
+            txtStock.TabIndex = 7;
             // 
-            // textBox2
+            // txtSize
             // 
-            textBox2.Location = new Point(126, 205);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(269, 27);
-            textBox2.TabIndex = 8;
+            txtSize.Location = new Point(126, 205);
+            txtSize.Name = "txtSize";
+            txtSize.Size = new Size(269, 27);
+            txtSize.TabIndex = 8;
             // 
-            // textBox3
+            // txtPrice
             // 
-            textBox3.Location = new Point(126, 145);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(269, 27);
-            textBox3.TabIndex = 9;
+            txtPrice.Location = new Point(126, 145);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(269, 27);
+            txtPrice.TabIndex = 9;
             // 
-            // textBox4
+            // txtModel
             // 
-            textBox4.Location = new Point(126, 84);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(269, 27);
-            textBox4.TabIndex = 10;
+            txtModel.Location = new Point(126, 84);
+            txtModel.Name = "txtModel";
+            txtModel.Size = new Size(269, 27);
+            txtModel.TabIndex = 10;
             // 
-            // textBox5
+            // txtBrand
             // 
-            textBox5.Location = new Point(126, 27);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(269, 27);
-            textBox5.TabIndex = 11;
+            txtBrand.Location = new Point(126, 27);
+            txtBrand.Name = "txtBrand";
+            txtBrand.Size = new Size(269, 27);
+            txtBrand.TabIndex = 11;
             // 
-            // SmartPhone
+            // frmAddPhone
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(407, 378);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtBrand);
+            Controls.Add(txtModel);
+            Controls.Add(txtPrice);
+            Controls.Add(txtSize);
+            Controls.Add(txtStock);
             Controls.Add(btnCancel);
             Controls.Add(btnOk);
             Controls.Add(lblVoorraad);
@@ -159,8 +158,9 @@
             Controls.Add(lblPrijs);
             Controls.Add(lblModel);
             Controls.Add(lblMerk);
-            Name = "SmartPhone";
+            Name = "frmAddPhone";
             Text = "SmartPhone";
+            Load += frmAddPhone_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -174,10 +174,10 @@
         private Label lblVoorraad;
         private Button btnOk;
         private Button btnCancel;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox txtStock;
+        private TextBox txtSize;
+        private TextBox txtPrice;
+        private TextBox txtModel;
+        private TextBox txtBrand;
     }
 }
